@@ -91,12 +91,20 @@ After implementation:
 - Avoid duplicate utility classes.
 - Keep responsive design consistent.
 
+
 ## 7. shadcn/ui
 
 - Reuse existing components from src/components/ui/.
 - Do not recreate components that already exist.
 - Follow the project's existing component patterns.
 - Add new shadcn components only when needed.
+- Always prefer installing the complete parent component using the shadcn CLI.
+- Do not install individual child components separately when they are already included in the parent component.
+- Install the parent component and its required dependencies together.
+- Only install individual subcomponents when the parent component is unavailable or explicitly requested.
+- Avoid unnecessary installations, duplicate files, and repeated registry lookups.
+
+
 
 ## 8. Biome
 

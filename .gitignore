@@ -10,6 +10,12 @@
 !.yarn/releases
 !.yarn/versions
 
+# logs
+logs/
+*.log
+
+
+
 # testing
 /coverage
 
@@ -31,7 +37,10 @@ yarn-error.log*
 .pnpm-debug.log*
 
 # env files (can opt-in for committing if needed)
-.env*
+.env
+.env.*
+!.env.example
+!.env.sample
 
 # vercel
 .vercel
@@ -39,3 +48,16 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+
+# editor
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+
+# operating system
+Thumbs.db
+Desktop.ini
+
+# biome cache
+.biome/
