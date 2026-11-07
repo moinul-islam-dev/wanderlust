@@ -1,0 +1,192 @@
+import { ArrowUpRight } from "lucide-react";
+import { Cormorant_Garamond } from "next/font/google";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+
+const display = Cormorant_Garamond({
+  subsets: ["latin"],
+  weight: ["700"],
+});
+
+const quickLinks = [
+  { label: "Home", href: "/" },
+  { label: "Destinations", href: "/destinations" },
+  { label: "My Bookings", href: "/bookings" },
+  { label: "My Profile", href: "/profile" },
+];
+
+const supportLinks = [
+  { label: "Help Center", href: "/help" },
+  { label: "Terms of Service", href: "/terms" },
+  { label: "Privacy Policy", href: "/privacy" },
+];
+
+const socialLinks = [
+  {
+    label: "X",
+    href: "https://x.com",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z" />
+      </svg>
+    ),
+  },
+  {
+    label: "LinkedIn",
+    href: "https://linkedin.com",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z" />
+      </svg>
+    ),
+  },
+  {
+    label: "Instagram",
+    href: "https://instagram.com",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+      </svg>
+    ),
+  },
+];
+
+const Footer = () => {
+  return (
+    <footer className="bg-black text-white">
+      <div className="mx-auto w-full max-w-6xl px-6 py-16">
+        <div>
+          <h2
+            className={`${display.className} text-6xl font-bold leading-none tracking-tight text-white sm:text-7xl`}
+          >
+            Wanderlast
+          </h2>
+          <p className="mt-3 text-sm text-neutral-400">
+            Your gateway to extraordinary travel experiences around the world.
+          </p>
+        </div>
+
+        <div className="mt-12 grid gap-10 md:grid-cols-2 lg:grid-cols-[1.3fr_1fr_1fr_1fr]">
+          <div>
+            <h3 className="text-xs font-medium uppercase tracking-[0.08em] text-neutral-400">
+              Newsletter
+            </h3>
+            <p className="mt-2 text-xs text-neutral-400">
+              Subscribe for exclusive travel deals and inspiration.
+            </p>
+
+            <form
+              action="#"
+              method="get"
+              className="relative mt-4 w-full max-w-xs"
+            >
+              <Input
+                type="email"
+                name="email"
+                placeholder="Enter email"
+                aria-label="Email address"
+                className="h-11 rounded-none border-0 bg-neutral-800 px-4 pr-12 text-sm text-white placeholder:text-neutral-400 focus-visible:ring-1 focus-visible:ring-white/30 dark:bg-neutral-800"
+              />
+              <Button
+                type="submit"
+                size="icon"
+                variant="ghost"
+                className="absolute top-0 right-0 h-11 w-11 rounded-none text-white hover:bg-white/10 hover:text-white"
+              >
+                <ArrowUpRight className="size-5" aria-hidden="true" />
+                <span className="sr-only">Subscribe</span>
+              </Button>
+            </form>
+          </div>
+
+          <div>
+            <h3 className="text-xs font-medium uppercase tracking-[0.08em] text-neutral-400">
+              Quick Links
+            </h3>
+            <ul className="mt-5 space-y-3 text-sm text-neutral-300">
+              {quickLinks.map((link) => (
+                <li key={link.label}>
+                  <Link
+                    href={link.href}
+                    className="transition-colors hover:text-white"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="text-xs font-medium uppercase tracking-[0.08em] text-neutral-400">
+              Support
+            </h3>
+            <ul className="mt-5 space-y-3 text-sm text-neutral-300">
+              {supportLinks.map((link) => (
+                <li key={link.label}>
+                  <Link
+                    href={link.href}
+                    className="transition-colors hover:text-white"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="text-xs font-medium uppercase tracking-[0.08em] text-neutral-400">
+              Contact Us
+            </h3>
+            <ul className="mt-5 space-y-3 text-sm text-neutral-300">
+              <li>
+                <a
+                  href="tel:+7869011622"
+                  className="transition-colors hover:text-white"
+                >
+                  786 901 1622
+                </a>
+              </li>
+              <li>
+                <a
+                  href="mailto:info@wandarland.com"
+                  className="transition-colors hover:text-white"
+                >
+                  info@wandarland.com
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="mt-14 flex flex-col gap-4 border-t border-white/15 pt-6 sm:flex-row sm:items-center sm:justify-between">
+          <p className="text-xs text-neutral-400">
+            © 2026 Wanderlust. All rights reserved.
+          </p>
+
+          <div className="flex items-center gap-1">
+            {socialLinks.map((social) => (
+              <Button
+                key={social.label}
+                variant="ghost"
+                size="icon"
+                nativeButton={false}
+                render={
+                  <Link href={social.href} target="_blank" rel="noreferrer" />
+                }
+                aria-label={social.label}
+                className="size-8 rounded-none bg-transparent text-neutral-300 hover:bg-transparent hover:text-white [&_svg]:size-5"
+              >
+                {social.icon}
+              </Button>
+            ))}
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;

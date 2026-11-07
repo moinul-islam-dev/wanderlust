@@ -72,6 +72,7 @@ const Banner = () => {
                 {/* CTA Buttons */}
                 <div className="mt-8 flex flex-wrap items-center justify-center gap-4 sm:mt-10">
                     <Button
+                        nativeButton={false}
                         render={<Link href="/destinations" />}
                         className="h-13 min-w-51.25 gap-6 rounded-none bg-brand px-6 text-sm font-semibold uppercase tracking-wide text-white transition-colors hover:bg-brand/90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
                     >
@@ -81,6 +82,7 @@ const Banner = () => {
 
                     <Button
                         variant="secondary"
+                        nativeButton={false}
                         render={<Link href="/destinations" />}
                         className="h-13 min-w-51.25 gap-0 rounded-none bg-white/25 px-6 text-sm font-semibold uppercase tracking-wide text-white backdrop-blur-sm transition-colors hover:bg-white/35 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
                     >

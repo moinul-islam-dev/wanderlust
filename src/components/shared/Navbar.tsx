@@ -25,10 +25,10 @@ const Navbar = () => {
 
   return (
     <header
-      className={`z-50 bg-white ${
+      className={`z-50 bg-white top-5 left-4 right-4 absolute border-b border-neutral-200/70 ${
         isHomePage
-          ? "absolute top-5 left-4 right-4"
-          : "sticky top-0 w-full border-b border-neutral-200/70"
+          ? ""
+          : ""
       }`}
     >
       <nav className="relative mx-auto flex h-14 w-full max-w-360 items-center justify-between px-6 lg:px-8">
@@ -44,6 +44,7 @@ const Navbar = () => {
               <li key={link.href}>
                 <Button
                   variant="ghost"
+                  nativeButton={false}
                   render={<Link href={link.href} />}
                   aria-current={isActive ? "page" : undefined}
                   className={`relative h-auto rounded-none bg-transparent px-0 text-[15px] font-medium hover:bg-transparent ${
@@ -85,6 +86,7 @@ const Navbar = () => {
             <li key={link.href}>
               <Button
                 variant="ghost"
+                nativeButton={false}
                 render={<Link href={link.href} />}
                 className="h-auto rounded-none bg-transparent px-0 text-sm font-medium text-neutral-900 hover:bg-transparent hover:text-brand sm:text-[15px]"
               >

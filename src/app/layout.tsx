@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Josefin_Sans } from "next/font/google";
+import Footer from "@/components/shared/Footer";
 import Navbar from "@/components/shared/Navbar";
 import "./globals.css";
 
@@ -17,7 +18,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html lang="en" className={`${josefinSans.className} h-full antialiased`}>
       <body className="min-h-full flex flex-col">
         <Navbar />
-        {children}
+        <main className="flex-1">{children}</main>
+        <Footer />
       </body>
     </html>
   );
